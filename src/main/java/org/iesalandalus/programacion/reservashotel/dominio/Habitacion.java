@@ -6,18 +6,18 @@ public class Habitacion {
 
    public static final double MIN_PRECIO_HABITACION=40;
    public static final double MAX_PRECIO_HABITACION=150;
-   public static final double MIN_NUMERO_PUERTA=0;  //SEra numero de habitaciones por planta??
+   public static final double MIN_NUMERO_PUERTA=0;
    public static final double MAX_NUMERO_PUERTA=14;
    public static final double MIN_NUMERO_PLANTA=1;
    public static final double MAX_NUMERO_PLANTA=3;
 
-   private String identificador;  //numero de planta seguido de + numero de puerta
+   private String identificador;
    private int planta;
    private int puerta;
    private double precio;
    private TipoHabitacion tipoHabitacion;
 
-   //Constructor.   //TODO* falla descripcion y es por String pero no se arreglarlo.
+   //Constructor.
    public Habitacion(int planta,int puerta,double precio/*,String descripcion*/)
    {
        setPlanta(planta);
@@ -26,7 +26,7 @@ public class Habitacion {
        setIdentificador();
    }
 
-   //Constructor //TODO* falta rellenar constructor, no entiendo este constructor...
+   //Constructor //
    public Habitacion(int planta, int puerta, double precio, TipoHabitacion tipoHabitacion/*,String descripcion*/)
    {
        setPlanta(planta);
@@ -37,7 +37,7 @@ public class Habitacion {
 
    }
 
-   //Constructor copia. //TODO* falla descripcion y es por String pero no se arreglarlo.
+   //Constructor copia.
    public Habitacion (Habitacion habitacion)
    {
        if (habitacion != null) {
@@ -89,7 +89,7 @@ public class Habitacion {
         }
         else
         {
-            throw new NullPointerException("ERROR");
+            throw new NullPointerException("ERROR 1");
         }
     }
 
@@ -100,14 +100,9 @@ public class Habitacion {
         }
         else
         {
-            throw new NullPointerException("ERROR");
+            throw new NullPointerException("ERROR 2");
         }
     }
-
-    /// 15
-    /// 15
-
-
 
     private void setPlanta(int planta)
     {
@@ -155,7 +150,7 @@ public class Habitacion {
         }
     }
 
-    //Metodos Equals y HasCode. //TODO una habitacion sera igual a la otra si su identificador es el mismo
+    //Metodos Equals y HasCode.
 
     @Override
     public boolean equals(Object o) {
@@ -179,4 +174,4 @@ public class Habitacion {
                 ", precio habitación=" + precio +
                 ", tipo habitación=" + tipoHabitacion;
     }
-}//identificador=%s (%d-%d), precio habitación=%s, tipo habitación=%s
+}
