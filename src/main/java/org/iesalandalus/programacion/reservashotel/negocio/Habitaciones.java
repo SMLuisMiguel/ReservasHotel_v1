@@ -127,14 +127,14 @@ public class Habitaciones {
         return -1;
     }
 
-    public Habitacion buscar (Habitacion habibitacion)
+    public Habitacion buscar (Habitacion habitacion)
     {
-        if (habibitacion != null)
+        if (habitacion != null)
         {
             for (int i = 0; i < coleccionHabitaciones.length; i++)
             {
                 Habitacion original = coleccionHabitaciones[i];
-                if (habibitacion.equals(original))
+                if (habitacion.equals(original))
                 {
                     return new Habitacion(original);
                 }
