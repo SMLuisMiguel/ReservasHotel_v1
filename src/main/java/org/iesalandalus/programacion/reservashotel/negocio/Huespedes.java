@@ -1,11 +1,8 @@
 package org.iesalandalus.programacion.reservashotel.negocio;
-
 import org.iesalandalus.programacion.reservashotel.dominio.Huesped;
-
 import javax.naming.OperationNotSupportedException;
 
 public class Huespedes {
-
 
 
     private int capacidad;
@@ -69,7 +66,8 @@ public class Huespedes {
         {
             throw new NullPointerException("ERROR: No se puede insertar un huésped nulo.");
         }
-        else {
+        else
+        {
             boolean insertado = false;
             for (int i = 0; i < coleccionHuespedes.length; i++)
             {
