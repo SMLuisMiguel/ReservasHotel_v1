@@ -2,7 +2,7 @@ package org.iesalandalus.programacion.reservashotel.dominio;
 
 public enum Regimen {
     SOLO_ALOJAMIENTO("Solo Alojamiento", 0),
-    ALOJAMIENTO_DESAYUNO("Alojamineto con desayuno",15),
+    ALOJAMIENTO_DESAYUNO("Alojamiento con desayuno",15),
     MEDIA_PENSION("Media Pension",30),
     PENSION_COMPLETA("Pension Completa",50);
 

@@ -83,7 +83,7 @@ public class Habitaciones {
     {
         if (habitacion == null)
         {
-            throw new NullPointerException("ERROR: No se puede insertar una habitaci髇 nula.");
+            throw new NullPointerException("ERROR: No se puede insertar una habitaci贸n nula.");
         }
         else
         {
@@ -102,14 +102,14 @@ public class Habitaciones {
                {
                    if(original.equals(habitacion))
                    {
-                       throw new OperationNotSupportedException("ERROR: Ya existe una habitaci髇 con ese identificador.");
+                       throw new OperationNotSupportedException("ERROR: Ya existe una habitaci贸n con ese identificador.");
                    }
 
                }
            }
            if (!insertado)
            {
-               throw new OperationNotSupportedException("ERROR: No se aceptan m醩 habitaciones.");
+               throw new OperationNotSupportedException("ERROR: No se aceptan m谩s habitaciones.");
            }
         }
     }
@@ -155,7 +155,7 @@ public class Habitaciones {
 
             if (indiceABorrar == -1)
             {
-                throw new OperationNotSupportedException("ERROR: No existe ninguna habitaci髇 como la indicada.");
+                throw new OperationNotSupportedException("ERROR: No existe ninguna habitaci贸n como la indicada.");
             }
 
             tamano--;
@@ -170,7 +170,7 @@ public class Habitaciones {
         }
         else
         {
-            throw new NullPointerException("ERROR: No se puede borrar una habitaci髇 nula.");
+            throw new NullPointerException("ERROR: No se puede borrar una habitaci贸n nula.");
         }
     }
 

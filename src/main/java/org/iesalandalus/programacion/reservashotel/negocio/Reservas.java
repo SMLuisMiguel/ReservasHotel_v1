@@ -90,7 +90,7 @@ public class Reservas {
             }
             if (!insertado)
             {
-                throw new OperationNotSupportedException("ERROR: No se aceptan m·s reservas.");
+                throw new OperationNotSupportedException("ERROR: No se aceptan m√°s reservas.");
             }
         }
     }
@@ -220,7 +220,7 @@ public class Reservas {
         }
         else
         {
-            throw new  NullPointerException("ERROR: No se pueden buscar reservas de un tipo de habitaciÛn nula.");
+            throw new  NullPointerException("ERROR: No se pueden buscar reservas de un tipo de habitaci√≥n nula.");
         }
     }
 
@@ -244,7 +244,7 @@ public class Reservas {
         }
         else
         {
-            throw new  NullPointerException("ERROR: No se pueden buscar reservas de una habitaciÛn nula.");
+            throw new  NullPointerException("ERROR: No se pueden buscar reservas de una habitaci√≥n nula.");
         }
     }
 }
