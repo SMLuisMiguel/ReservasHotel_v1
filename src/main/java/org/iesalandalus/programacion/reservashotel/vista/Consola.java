@@ -16,7 +16,7 @@ public class Consola {
     public static void mostrarMenu()
     {
         System.out.println("1: Insertar huesped. \n2: Buscar huesped. \n3: Borrar huesped.\n4: Mostrar huesped.\n5: Insertar habitación.\n6: Buscar habitación.\n7: Borrar habitación.\n8: Mostrar habitaciónes." +
-                "\n9: Insertar reserva.\n10: Anular reserva.\n11: Mostrar reservas. \n12: Consultar disponibilidad .\n13: Salir.");
+                "\n9: Insertar reserva.\n10: Anular reserva.\n11: Mostrar reservas. \n12: Consultar disponibilidad.\n13: Salir.");
 
     }
 
@@ -92,7 +92,7 @@ public class Consola {
 
         LocalDate fechaNacimiento = leerFecha("Introduce la fecha de nacimiento del nuevo huesped");
 
-        return new Huesped(nombre, telefono, correo, dni, fechaNacimiento);
+        return new Huesped(nombre, dni, correo, telefono, fechaNacimiento);
     }
 
     public static Huesped getHuespedPorDni()
@@ -107,7 +107,7 @@ public class Consola {
             pedirDni=Entrada.cadena();
         }
 
-        return new Huesped("Nombre", "600000000", "test@gmail.com", pedirDni, LocalDate.now());
+        return new Huesped("Nombre", pedirDni, "test@gmail.com", "600000000", LocalDate.now());
     }
 
     public static LocalDate leerFecha(String mensaje)

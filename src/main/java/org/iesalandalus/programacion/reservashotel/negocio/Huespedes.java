@@ -64,7 +64,7 @@ public class Huespedes {
     {
         if (huesped == null)
         {
-            throw new NullPointerException("ERROR: No se puede insertar un huésped nulo.");
+            throw new NullPointerException("ERROR: No se puede insertar un huÃ©sped nulo.");
         }
         else
         {
@@ -83,13 +83,13 @@ public class Huespedes {
                 {
                     if (original.equals(huesped))
                     {
-                        throw new OperationNotSupportedException("ERROR: Ya existe un huésped con ese dni.");
+                        throw new OperationNotSupportedException("ERROR: Ya existe un huÃ©sped con ese dni.");
                     }
                 }
             }
 
             if(!insertado){
-                throw new OperationNotSupportedException("ERROR: No se aceptan más huéspedes.");
+                throw new OperationNotSupportedException("ERROR: No se aceptan mÃ¡s huÃ©spedes.");
             }
         }
     }
@@ -149,7 +149,7 @@ public class Huespedes {
 
             if (indiceABorrar == -1)
             {
-                throw new OperationNotSupportedException("ERROR: No existe ningún huésped como el indicado.");
+                throw new OperationNotSupportedException("ERROR: No existe ningÃºn huÃ©sped como el indicado.");
             }
 
             tamano--;
@@ -164,7 +164,7 @@ public class Huespedes {
         }
         else
         {
-            throw new NullPointerException("ERROR: No se puede borrar un huésped nulo.");
+            throw new NullPointerException("ERROR: No se puede borrar un huÃ©sped nulo.");
         }
     }
 

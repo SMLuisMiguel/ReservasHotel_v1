@@ -11,7 +11,7 @@ public class Huesped {
     //Constantes
     private static final String ER_TELEFONO = "[0-9]{9}";
     private static final String ER_CORREO = "^[^@]+@[^@]+\\.[a-zA-Z]{2,}$";
-    private static final String ER_DNI = "[0-9]{8}[A-Z a-z]";
+    private static final String ER_DNI = "[0-9]{8}[A-Za-z]";
     public static final String FORMATO_FECHA="dd/MM/yyyy";
 
     //Atributos
