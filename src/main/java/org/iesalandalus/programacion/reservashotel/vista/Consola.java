@@ -1,5 +1,4 @@
 package org.iesalandalus.programacion.reservashotel.vista;
-import org.iesalandalus.programacion.reservashotel.dominio.*;
 import org.iesalandalus.programacion.reservashotel.modelo.dominio.*;
 import org.iesalandalus.programacion.utilidades.Entrada;
 import java.time.LocalDate;
