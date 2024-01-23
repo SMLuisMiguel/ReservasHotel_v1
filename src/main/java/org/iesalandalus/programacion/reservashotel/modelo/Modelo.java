@@ -102,6 +102,10 @@ public class Modelo {
         return habitaciones.get();
     }
 
+    public Habitacion [] getHabitaciones(TipoHabitacion tipoHabitacion)
+    {
+        return habitaciones.get(tipoHabitacion);
+    }
     public Reserva [] getReservas()
     {
         return reservas.get();
