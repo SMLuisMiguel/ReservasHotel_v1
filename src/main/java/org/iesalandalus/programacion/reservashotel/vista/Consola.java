@@ -1,8 +1,11 @@
 package org.iesalandalus.programacion.reservashotel.vista;
 import org.iesalandalus.programacion.reservashotel.dominio.*;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.*;
 import org.iesalandalus.programacion.utilidades.Entrada;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Locale;
 
 public class Consola {
@@ -245,4 +248,33 @@ public class Consola {
 
         return new Reserva(huesped, habitacion, regimen, fechaInicio, fechaFin, pedirNumeroPersonas);
     }
+
+
+
+    public LocalDateTime leerFechaHora(String mensaje)
+    {
+        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        LocalDateTime fechaFormateada = null;
+
+        while (fechaFormateada == null)
+        {
+            try
+            {
+                System.out.println("Introduzca una fecha y hora");
+                String entrada = Entrada.cadena();
+                fechaFormateada = LocalDateTime.parse(entrada, formateador);
+            }
+            catch (DateTimeParseException e)
+            {
+                System.out.println("La fecha y hora introducida no es correcta.");
+                System.out.println("El formato de fecha y hora debe ser: dd-mm-aaaa hh:mm:ss");
+            }
+        }
+
+        return fechaFormateada;
+
+    }
+
+
+
 }
