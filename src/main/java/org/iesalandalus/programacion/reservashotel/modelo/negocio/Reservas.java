@@ -1,11 +1,12 @@
-package org.iesalandalus.programacion.reservashotel.negocio;
-import org.iesalandalus.programacion.reservashotel.dominio.Habitacion;
-import org.iesalandalus.programacion.reservashotel.dominio.Huesped;
-import org.iesalandalus.programacion.reservashotel.dominio.Reserva;
-import org.iesalandalus.programacion.reservashotel.dominio.TipoHabitacion;
+package org.iesalandalus.programacion.reservashotel.modelo.negocio;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.Habitacion;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.Huesped;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.Reserva;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.TipoHabitacion;
 
 import javax.naming.OperationNotSupportedException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Reservas {
 
@@ -137,7 +138,7 @@ public class Reservas {
         }
         else
         {
-            throw new NullPointerException("ERROR 4.");
+            throw new NullPointerException("ERROR .");
         }
     }
 
@@ -171,7 +172,7 @@ public class Reservas {
     {
         if(indice < 1)
         {
-            throw new IllegalArgumentException("erro 5");
+            throw new IllegalArgumentException("Error ");
         }
         coleccionReservas[indice-1] = coleccionReservas[indice];
         coleccionReservas[indice] = null;
@@ -247,6 +248,18 @@ public class Reservas {
             throw new  NullPointerException("ERROR: No se pueden buscar reservas de una habitación nula.");
         }
     }
+
+    //Tarea 5 metodos checkIn y checkout.
+    public void realizarCheckin(Reserva reserva, LocalDateTime fecha)
+    {
+        reserva.setCheckIn(fecha);
+    }
+
+    public void realizarCheckout(Reserva reserva, LocalDateTime fecha)
+    {
+        reserva.setCheckOut(fecha);
+    }
+
 }
 
 
