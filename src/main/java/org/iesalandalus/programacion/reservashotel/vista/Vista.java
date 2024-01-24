@@ -13,20 +13,22 @@ import java.time.LocalDateTime;
 
 public class Vista {
 
-    private static Controlador controlador;
+    private Controlador controlador;
 
-    public static void setControlador(Controlador controlador)
+    public Vista (){}
+
+    public void setControlador(Controlador controlador)
     {
         if (controlador == null)
         {
             throw new NullPointerException("Controlador no puede ser nulo");
         }
         else {
-            Vista.controlador = controlador;
+            this.controlador = controlador;
         }
     }
 
-    public static void comenzar()
+    public void comenzar()
     {
         System.out.println("--------------------------------------------");
         System.out.println("Bienvenido al hotel IES Al-Ándalus ");
@@ -40,14 +42,16 @@ public class Vista {
             opcion = Consola.elegirOpcion();
             ejecutarOpcion(opcion);
         }
+
+        controlador.terminar();
     }
 
-    public static void terminar()
+    public void terminar()
     {
         System.out.println("Adios.");
     }
 
-    private static void ejecutarOpcion(Opcion opcion)
+    private void ejecutarOpcion(Opcion opcion)
     {
         switch (opcion)
         {
@@ -123,7 +127,7 @@ public class Vista {
         }
     }
 
-    private static void insertarHuesped() {
+    private void insertarHuesped() {
         Huesped huesped = null;
         while (huesped == null) {
             try {
@@ -142,7 +146,7 @@ public class Vista {
     }
 
 
-    private static void buscarHuesped()
+    private void buscarHuesped()
     {
         Huesped huesped = null;
         while (huesped == null) {
@@ -171,7 +175,7 @@ public class Vista {
         }
     }
 
-    private static void borrarHuesped()
+    private void borrarHuesped()
     {
         Huesped huesped = null;
         while (huesped == null) {
@@ -191,7 +195,7 @@ public class Vista {
         }
     }
 
-    private static void mostrarHuespedes()
+    private void mostrarHuespedes()
     {
         if (controlador.getHuespedes() != null && getNumElementosNoNulos(controlador.getHuespedes()) > 0)
         {
@@ -208,7 +212,7 @@ public class Vista {
         }
     }
 
-    private static void insertarHabitacion()
+    private void insertarHabitacion()
     {
         Habitacion habitacion = null;
         while (habitacion == null) {
@@ -227,7 +231,7 @@ public class Vista {
         }
     }
 
-    private static void buscarHabitacion()
+    private void buscarHabitacion()
     {
         Habitacion habitacion = null;
         while (habitacion == null) {
@@ -256,7 +260,7 @@ public class Vista {
         }
     }
 
-    private static void borrarHabitacion()
+    private void borrarHabitacion()
     {
         Habitacion habitacion = null;
         while (habitacion == null) {
@@ -276,7 +280,7 @@ public class Vista {
         }
     }
 
-    private static void mostrarHabitaciones()
+    private void mostrarHabitaciones()
     {
         if (controlador.getHabitaciones() != null && getNumElementosNoNulos(controlador.getHabitaciones()) > 0)
         {
@@ -293,7 +297,7 @@ public class Vista {
         }
     }
 
-    private static void insertarReserva()
+    private void insertarReserva()
     {
         Reserva reserva = null;
         while (reserva == null) {
@@ -325,7 +329,7 @@ public class Vista {
         }
     }
 
-    private static void listarReserva(TipoHabitacion tipoHabitacion)
+    private void listarReserva(TipoHabitacion tipoHabitacion)
     {
         Reserva[] listaReservas = controlador.getReservas(tipoHabitacion);
         if (listaReservas != null && listaReservas.length > 0)
@@ -343,7 +347,7 @@ public class Vista {
         System.out.println("Volviendo al menu...");
     }
 
-    private static void listarReserva(Huesped huesped)
+    private void listarReserva(Huesped huesped)
     {
         Reserva[] listaReservas = controlador.getReservas(huesped);
         if (listaReservas != null && listaReservas.length > 0)
@@ -361,7 +365,7 @@ public class Vista {
         System.out.println("Volviendo al menu...");
     }
 
-    private static void listarReserva(LocalDate fecha)
+    private void listarReserva(LocalDate fecha)
     {
         if (controlador.getReservas() != null && getNumElementosNoNulos(controlador.getReservas()) > 0)
         {
@@ -386,7 +390,7 @@ public class Vista {
         System.out.println("Volviendo al menu...");
     }
 
-    private static Reserva[] getReservasAnulables(Reserva[] reservasAAnular)
+    private Reserva[] getReservasAnulables(Reserva[] reservasAAnular)
     {
         Reserva[] reservasAnulables = new Reserva[reservasAAnular.length];
         int contador = 0;
@@ -409,7 +413,7 @@ public class Vista {
         return reservasAnulablesLimpio;
     }
 
-    private static void anularReserva()
+    private void anularReserva()
     {
         Huesped huesped = null;
         Reserva[] reservasAnulables = null;
@@ -473,7 +477,7 @@ public class Vista {
         }
     }
 
-    private static void mostrarReservas()
+    private void mostrarReservas()
     {
         if (controlador.getReservas() != null && getNumElementosNoNulos(controlador.getReservas()) > 0)
         {
@@ -490,7 +494,7 @@ public class Vista {
         }
     }
 
-    private static int getNumElementosNoNulos(Reserva[] array)
+    private int getNumElementosNoNulos(Reserva[] array)
     {
         int contador = 0;
         for (int i = 0; i < array.length; i++)
@@ -503,7 +507,7 @@ public class Vista {
         return contador;
     }
 
-    private static int getNumElementosNoNulos(Habitacion[] array)
+    private int getNumElementosNoNulos(Habitacion[] array)
     {
         int contador = 0;
         for (int i = 0; i < array.length; i++)
@@ -516,7 +520,7 @@ public class Vista {
         return contador;
     }
 
-    private static int getNumElementosNoNulos(Huesped[] array)
+    private int getNumElementosNoNulos(Huesped[] array)
     {
         int contador = 0;
         for (int i = 0; i < array.length; i++)
@@ -529,7 +533,7 @@ public class Vista {
         return contador;
     }
 
-    private static Habitacion consultarDisponibilidad(TipoHabitacion tipohabitacion, LocalDate fechaInicioReserva, LocalDate fechaFinReserva)
+    private Habitacion consultarDisponibilidad(TipoHabitacion tipohabitacion, LocalDate fechaInicioReserva, LocalDate fechaFinReserva)
     {
         Habitacion habitacion = null;
 
@@ -580,47 +584,45 @@ public class Vista {
         return habitacion;
     }
 
-    private static void realizarCheckin()
+    private void realizarCheckin()
     {
-        System.out.println("Introduce el huesped sobre el que se va a hacer checkin");
-        Huesped huesped = Consola.leerHuesped();
+        Huesped huesped = Consola.getHuespedPorDni();
         Reserva[] reservas = controlador.getReservas(huesped);
         LocalDateTime fechaCheckin = Consola.leerFechaHora("Introduce la fecha y hora del checkin");
 
         int checkInRealizados = 0;
         for (int i = 0; i < reservas.length; i++)
         {
-            if (reservas[i].getFechaInicioReserva().equals(fechaCheckin.toLocalDate()))
+            if (reservas[i] != null && reservas[i].getFechaInicioReserva().equals(fechaCheckin.toLocalDate()))
             {
                 controlador.realizarCheckin(reservas[i], fechaCheckin);
                 checkInRealizados++;
             }
         }
 
-        if(checkInRealizados != 0)
+        if(checkInRealizados == 0)
         {
             System.out.println("No existe reserva para la fecha indicado");
         }
     }
 
-    private static void realizarCheckout()
+    private void realizarCheckout()
     {
-        System.out.println("Introduce el huesped sobre el que se va a hacer checkout");
-        Huesped huesped = Consola.leerHuesped();
+        Huesped huesped = Consola.getHuespedPorDni();
         Reserva[] reservas = controlador.getReservas(huesped);
         LocalDateTime fechaCheckout = Consola.leerFechaHora("Introduce la fecha y hora del checkout");
 
         int checkOutRealizados = 0;
         for (int i = 0; i < reservas.length; i++)
         {
-            if (reservas[i].getFechaFinReserva().equals(fechaCheckout.toLocalDate()))
+            if (reservas[i] != null && reservas[i].getFechaFinReserva().equals(fechaCheckout.toLocalDate()))
             {
                 controlador.realizarCheckout(reservas[i], fechaCheckout);
                 checkOutRealizados++;
             }
         }
 
-        if(checkOutRealizados != 0)
+        if(checkOutRealizados == 0)
         {
             System.out.println("No existe reserva para la fecha indicado");
         }

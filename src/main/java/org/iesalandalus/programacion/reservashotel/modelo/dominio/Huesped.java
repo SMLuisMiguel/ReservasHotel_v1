@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.reservashotel.dominio;
+package org.iesalandalus.programacion.reservashotel.modelo.dominio;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
@@ -75,14 +75,14 @@ public class Huesped {
             }
             else
             {
-                throw new IllegalArgumentException("ERROR: La letra del dni del huésped no es correcta.");
+                throw new IllegalArgumentException("ERROR: La letra del dni del huï¿½sped no es correcta.");
             }
 
 
         }
         else
         {
-            throw new IllegalArgumentException("ERROR: El dni del huésped no tiene un formato válido.");
+            throw new IllegalArgumentException("ERROR: El dni del huï¿½sped no tiene un formato vï¿½lido.");
         }
     }
 
@@ -109,7 +109,7 @@ public class Huesped {
         }
         else
         {
-            throw new NullPointerException("ERROR: No es posible copiar un huésped nulo.");
+            throw new NullPointerException("ERROR: No es posible copiar un huï¿½sped nulo.");
         }
     }
 
@@ -149,12 +149,12 @@ public class Huesped {
             }
             else
             {
-                throw new IllegalArgumentException("ERROR: El nombre de un huésped no puede estar vacío.");
+                throw new IllegalArgumentException("ERROR: El nombre de un huï¿½sped no puede estar vacï¿½o.");
             }
         }
         else
         {
-            throw new NullPointerException("ERROR: El nombre de un huésped no puede ser nulo.");
+            throw new NullPointerException("ERROR: El nombre de un huï¿½sped no puede ser nulo.");
         }
     }
 
@@ -167,12 +167,12 @@ public class Huesped {
             if (mat.matches()) {
                 this.telefono = telefono;
             } else {
-                throw new IllegalArgumentException("ERROR: El teléfono del huésped no tiene un formato válido.");
+                throw new IllegalArgumentException("ERROR: El telï¿½fono del huï¿½sped no tiene un formato vï¿½lido.");
             }
         }
         else
         {
-            throw new NullPointerException("ERROR: El teléfono de un huésped no puede ser nulo.");
+            throw new NullPointerException("ERROR: El telï¿½fono de un huï¿½sped no puede ser nulo.");
         }
     }
 
@@ -185,12 +185,12 @@ public class Huesped {
             if (mat.matches()) {
                 this.correo = correo;
             } else {
-                throw new IllegalArgumentException("ERROR: El correo del huésped no tiene un formato válido.");
+                throw new IllegalArgumentException("ERROR: El correo del huï¿½sped no tiene un formato vï¿½lido.");
             }
         }
         else
         {
-            throw new NullPointerException("ERROR: El correo de un huésped no puede ser nulo.");
+            throw new NullPointerException("ERROR: El correo de un huï¿½sped no puede ser nulo.");
         }
 
     }
@@ -203,7 +203,7 @@ public class Huesped {
         }
         else
         {
-            throw new NullPointerException("ERROR: La fecha de nacimiento de un huésped no puede ser nula.");
+            throw new NullPointerException("ERROR: La fecha de nacimiento de un huï¿½sped no puede ser nula.");
         }
     }
 
@@ -216,7 +216,7 @@ public class Huesped {
         }
         else
         {
-            throw new NullPointerException("ERROR: El dni de un huésped no puede ser nulo.");
+            throw new NullPointerException("ERROR: El dni de un huï¿½sped no puede ser nulo.");
         }
 
     }
@@ -265,7 +265,7 @@ public class Huesped {
                 " (" + getIniciales() + ")" +
                 ", DNI=" + dni +
                 ", correo=" + correo +
-                ", teléfono=" + telefono +
+                ", telï¿½fono=" + telefono +
                 ", fecha nacimiento=" + fechaNacimiento.format(formateador);
     }
 

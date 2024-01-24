@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.reservashotel.dominio;
+package org.iesalandalus.programacion.reservashotel.modelo.dominio;
 
 import java.util.Objects;
 
@@ -49,7 +49,7 @@ public class Habitacion {
        }
         else
        {
-           throw  new NullPointerException("ERROR: No es posible copiar una habitación nula.");
+           throw  new NullPointerException("ERROR: No es posible copiar una habitaciï¿½n nula.");
        }
    }
 
@@ -112,7 +112,7 @@ public class Habitacion {
         }
         else
         {
-            throw new IllegalArgumentException("ERROR: No se puede establecer como planta de una habitación un valor menor que 1.0 ni mayor que 3.0.");
+            throw new IllegalArgumentException("ERROR: No se puede establecer como planta de una habitaciï¿½n un valor menor que 1.0 ni mayor que 3.0.");
         }
     }
 
@@ -124,7 +124,7 @@ public class Habitacion {
         }
         else
         {
-            throw new IllegalArgumentException("ERROR: No se puede establecer como puerta de una habitación un valor menor que 0.0 ni mayor que 14.0.");
+            throw new IllegalArgumentException("ERROR: No se puede establecer como puerta de una habitaciï¿½n un valor menor que 0.0 ni mayor que 14.0.");
         }
     }
 
@@ -135,7 +135,7 @@ public class Habitacion {
         }
         else
         {
-            throw new IllegalArgumentException("ERROR: No se puede establecer como precio de una habitación un valor menor que 40.0 ni mayor que 150.0.");
+            throw new IllegalArgumentException("ERROR: No se puede establecer como precio de una habitaciï¿½n un valor menor que 40.0 ni mayor que 150.0.");
         }
     }
 
@@ -146,7 +146,7 @@ public class Habitacion {
         }
         else
         {
-            throw new NullPointerException("ERROR: No se puede establecer un tipo de habitación nula.");
+            throw new NullPointerException("ERROR: No se puede establecer un tipo de habitaciï¿½n nula.");
         }
     }
 
@@ -171,7 +171,7 @@ public class Habitacion {
     {
         return "identificador=" + identificador  +
                 " (" + planta + "-" + puerta + ")" +
-                ", precio habitación=" + precio +
-                ", tipo habitación=" + tipoHabitacion;
+                ", precio habitaciï¿½n=" + precio +
+                ", tipo habitaciï¿½n=" + tipoHabitacion;
     }
 }

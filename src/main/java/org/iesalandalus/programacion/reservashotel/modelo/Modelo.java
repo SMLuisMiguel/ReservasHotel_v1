@@ -9,8 +9,6 @@ import org.iesalandalus.programacion.reservashotel.modelo.negocio.Reservas;
 
 import javax.naming.OperationNotSupportedException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Modelo {
 
@@ -129,12 +127,12 @@ public class Modelo {
     //METODOS CHECK IN/OUT
     public void realizarCheckin(Reserva reserva, LocalDateTime fecha) //
     {
-        reserva.setCheckIn(fecha);
+        reservas.realizarCheckin(reserva, fecha);
     }
 
     public void realizarCheckout(Reserva reserva, LocalDateTime fecha)
     {
-        reserva.setCheckOut(fecha);
+        reservas.realizarCheckout(reserva, fecha);
     }
 
 

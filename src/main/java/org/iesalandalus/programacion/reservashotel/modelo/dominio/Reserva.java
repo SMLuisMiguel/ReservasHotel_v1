@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.reservashotel.dominio;
+package org.iesalandalus.programacion.reservashotel.modelo.dominio;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;
@@ -74,7 +74,7 @@ public class Reserva {
         }
         else
         {
-            throw new NullPointerException("ERROR: El huésped de una reserva no puede ser nulo.");
+            throw new NullPointerException("ERROR: El huï¿½sped de una reserva no puede ser nulo.");
         }
     }
 
@@ -91,7 +91,7 @@ public class Reserva {
         }
         else
         {
-            throw new NullPointerException("ERROR: La habitación de una reserva no puede ser nula.");
+            throw new NullPointerException("ERROR: La habitaciï¿½n de una reserva no puede ser nula.");
         }
     }
 
@@ -108,7 +108,7 @@ public class Reserva {
         }
         else
         {
-            throw new NullPointerException("ERROR: El régimen de una reserva no puede ser nulo.");
+            throw new NullPointerException("ERROR: El rï¿½gimen de una reserva no puede ser nulo.");
         }
 
     }
@@ -124,7 +124,7 @@ public class Reserva {
         {
             if(fechaInicioReserva.isBefore(LocalDate.now()))
             {
-                throw new IllegalArgumentException("ERROR: La fecha de inicio de la reserva no puede ser anterior al día de hoy.");
+                throw new IllegalArgumentException("ERROR: La fecha de inicio de la reserva no puede ser anterior al dï¿½a de hoy.");
             }
             else
             {
@@ -210,7 +210,7 @@ public class Reserva {
                 LocalDateTime maximaHora = fechaFinReserva.atTime(MAX_HORAS_POSTERIOR_CHECKOUT, 0);
                 if (checkOut.isAfter(maximaHora))
                 {
-                    throw new IllegalArgumentException("ERROR: El checkout de una reserva puede ser como máximo 12 horas después de la fecha de fin de la reserva.");
+                    throw new IllegalArgumentException("ERROR: El checkout de una reserva puede ser como mï¿½ximo 12 horas despuï¿½s de la fecha de fin de la reserva.");
                 }
                 else
                 {
@@ -249,12 +249,12 @@ public class Reserva {
             }
             else
             {
-                throw new IllegalArgumentException("ERROR: El número de personas de una reserva no puede superar al máximo de personas establacidas para el tipo de habitación reservada.");
+                throw new IllegalArgumentException("ERROR: El nï¿½mero de personas de una reserva no puede superar al mï¿½ximo de personas establacidas para el tipo de habitaciï¿½n reservada.");
             }
         }
         else
         {
-            throw new IllegalArgumentException("ERROR: El número de personas de una reserva no puede ser menor o igual a 0.");
+            throw new IllegalArgumentException("ERROR: El nï¿½mero de personas de una reserva no puede ser menor o igual a 0.");
         }
     }
 
@@ -301,7 +301,7 @@ public class Reserva {
 
         String precioFormateado = new DecimalFormat("#,###.00").format(precio);
 
-        return "Huesped: " + huesped.getNombre() + " " + huesped.getDni() + " " + "Habitación:" +habitacion.getIdentificador() + " - " +
+        return "Huesped: " + huesped.getNombre() + " " + huesped.getDni() + " " + "Habitaciï¿½n:" +habitacion.getIdentificador() + " - " +
                 habitacion.getTipoHabitacion() + " Fecha Inicio Reserva: " + getFechaInicioReserva().format(formateador) + " Fecha Fin Reserva: " + getFechaFinReserva().format(formateador) + " Checkin: "
                 + textoCheckin + " Checkout: " + textoCheckOut + " Precio: " + precioFormateado + " Personas: " + numeroPersonas;
     }

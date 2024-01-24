@@ -185,7 +185,7 @@ public class Reservas {
             int contador = 0;
 
             for (int i = 0; i < coleccionReservas.length; i++) {
-                if (coleccionReservas[i].getHuesped().equals(huesped)) {
+                if (coleccionReservas[i] != null && coleccionReservas[i].getHuesped().equals(huesped)) {
                     Reserva original = coleccionReservas[i];
                     Reserva copia = new Reserva(original);
                     copiaReservas[contador] = copia;
@@ -209,7 +209,7 @@ public class Reservas {
             int contador = 0;
 
             for (int i = 0; i < coleccionReservas.length; i++) {
-                if (coleccionReservas[i].getHabitacion().getTipoHabitacion().equals(tipoHabitacion)) {
+                if (coleccionReservas[i] != null && coleccionReservas[i].getHabitacion().getTipoHabitacion().equals(tipoHabitacion)) {
                     Reserva original = coleccionReservas[i];
                     Reserva copia = new Reserva(original);
                     copiaReservas[contador] = copia;
@@ -232,7 +232,7 @@ public class Reservas {
             int contador = 0;
 
             for (int i = 0; i < coleccionReservas.length; i++) {
-                if (coleccionReservas[i].getHabitacion().equals(habitacion) &&
+                if (coleccionReservas[i] != null && coleccionReservas[i].getHabitacion().equals(habitacion) &&
                         coleccionReservas[i].getFechaInicioReserva().isAfter(LocalDate.now())) {
                     Reserva original = coleccionReservas[i];
                     Reserva copia = new Reserva(original);
@@ -252,12 +252,24 @@ public class Reservas {
     //Tarea 5 metodos checkIn y checkout.
     public void realizarCheckin(Reserva reserva, LocalDateTime fecha)
     {
-        reserva.setCheckIn(fecha);
+        for (int i = 0; i < coleccionReservas.length; i++)
+        {
+            if( coleccionReservas[i] != null && coleccionReservas[i].equals(reserva) )
+            {
+                coleccionReservas[i].setCheckIn(fecha);
+            }
+        }
     }
 
     public void realizarCheckout(Reserva reserva, LocalDateTime fecha)
     {
-        reserva.setCheckOut(fecha);
+        for (int i = 0; i < coleccionReservas.length; i++)
+        {
+            if( coleccionReservas[i] != null && coleccionReservas[i].equals(reserva) )
+            {
+                coleccionReservas[i].setCheckOut(fecha);
+            }
+        }
     }
 
 }
