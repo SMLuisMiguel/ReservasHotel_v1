@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 public class Modelo {
 
-    private static final int CAPACIDAD = 6;
+    public static final int CAPACIDAD = 6;
     private Reservas reservas;
     private Habitaciones habitaciones;
     private Huespedes huespedes;
