@@ -17,8 +17,10 @@ public class Consola {
 
     public static void mostrarMenu()
     {
-        System.out.println("1: Insertar huesped. \n2: Buscar huesped. \n3: Borrar huesped.\n4: Mostrar huesped.\n5: Insertar habitación.\n6: Buscar habitación.\n7: Borrar habitación.\n8: Mostrar habitaciónes." +
-                "\n9: Insertar reserva.\n10: Anular reserva.\n11: Mostrar reservas. \n12: Consultar disponibilidad.\n13: Salir.");
+        System.out.println("1: Insertar huesped. \n2: Buscar huesped. \n3: Borrar huesped.\n4: Mostrar huesped.\n5: Insertar habitación." +
+                "\n6: Buscar habitación.\n7: Borrar habitación.\n8: Mostrar habitaciónes." +
+                "\n9: Insertar reserva.\n10: Anular reserva.\n11: Mostrar reservas. \n12: Consultar disponibilidad." +
+                "\n13: Realizar Checkin. \n14: Realizar Checkout.\n15: Salir.");
 
     }
 
@@ -29,7 +31,7 @@ public class Consola {
         System.out.println("Introduzca una opcion");
         menu= Entrada.entero();
 
-        while (menu<1 || menu>13)
+        while (menu<1 || menu>15)
         {
             System.out.println("Introduzca un número correcto");
             menu=Entrada.entero();
@@ -72,6 +74,12 @@ public class Consola {
 
             case 12:
                 return Opcion.CONSULTAR_DISPONIBILIDAD;
+
+            case 13:
+                return Opcion.REALIZAR_CHECKIN;
+
+            case 14:
+                return Opcion.REALIZAR_CHECKOUT;
 
             default:
                 return Opcion.SALIR;
@@ -250,7 +258,7 @@ public class Consola {
 
 
 
-    public LocalDateTime leerFechaHora(String mensaje)
+    public static LocalDateTime leerFechaHora(String mensaje)
     {
         DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         LocalDateTime fechaFormateada = null;
@@ -259,7 +267,7 @@ public class Consola {
         {
             try
             {
-                System.out.println("Introduzca una fecha y hora");
+                System.out.println(mensaje);
                 String entrada = Entrada.cadena();
                 fechaFormateada = LocalDateTime.parse(entrada, formateador);
             }
